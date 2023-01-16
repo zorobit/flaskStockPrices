@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stock Price Prediction</title>
+</head>
+<body>
+  <h1>Stock Price Prediction</h1>
+  <form action="/predict" method="post">
+    <label for="ticker">Ticker:</label>
+    <input type="text" id="ticker" name="ticker">
+    <br>
+    <label for="start-date">Start Date (yyyy-mm-dd):</label>
+    <input type="text" id="start-date" name="start-date">
+    <br>
+    <label for="end-date">End Date (yyyy-mm-dd):</label>
+    <input type="text" id="end-date" name="end-date">
+    <br>
+    <input type="submit" value="Predict">
+  </form>
+  <br>
+  {% if prediction %}
+    <div id="prediction">Prediction: {{ prediction }}</div>
+  {% endif %}
+</body>
+</html>
